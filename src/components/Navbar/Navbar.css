@@ -1,0 +1,83 @@
+nav {
+    width: 100%;
+    color: white;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Fixed from justify-items to justify-content */
+    z-index: 10;
+}
+
+.logo {
+    width: 180px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+    font-size: 16px;
+}
+
+.dark-nav {
+    background: #212ea0;
+    transition: 0.5s;
+}
+
+.menu-icon {
+    display: none; /* Initially hidden */
+}
+
+/*----- Media Query -------*/
+@media(max-width: 1000px) {
+    .logo {
+        width: 140px;
+    }
+    nav ul li {
+        margin: 10px 15px;
+    }
+}
+
+@media(max-width: 840px) {
+    nav {
+        padding: 15px 0;
+    }
+    nav ul {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: #212ea0;
+        z-index: 9; /* Ensure it's below the menu icon if necessary */
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+    }
+    nav ul li {
+        display: block;
+        margin: 25px 40px;
+    }
+    .menu-icon {
+        display: block; /* Show the menu icon */
+        width: 30px;
+        cursor: pointer;
+        z-index: 11; /* Ensure it's above other elements */
+        position: absolute; /* Position it as needed */
+        top: 10px; /* Adjust based on your layout */
+        right: 10px; /* Adjust based on your layout */
+    }
+    .hide-mobile-menu{
+        right: -200px;
+        
+    }
+}
